@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/rain?setUnicode=true&characterEncoding=utf8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+  session:
+    store-type: none
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+
+mybatis-plus:
+  type-enums-package: com.breeze.rain.admin.model.enums
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+logging:
+  level:
+    org.springframework: debug
